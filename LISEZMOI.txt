@@ -1,0 +1,37 @@
+Ô GAYOT v8 — LIVRAISON FINALE
+=============================
+
+Contenu
+- O-Gayot-v8.apk        appli Android (APK debug signé, hors Play Store), Android 8 minimum, testée pour Galaxy S22 / S23 FE (Android 13-16).
+- O-Gayot-v8-html.zip   version navigateur : « Ô Gayot v8.html » + dossier media/ (à garder côte à côte).
+
+1) INSTALLER L'APK SUR UN SAMSUNG
+- Copier O-Gayot-v8.apk sur le téléphone (Google Drive, câble USB ou Quick Share).
+- L'ouvrir depuis « Mes fichiers » (ou Drive → Télécharger → ouvrir).
+- Si Android le demande : autoriser « Installer des applis inconnues » pour Mes fichiers / Drive.
+  Si « Auto Blocker » (Paramètres → Sécurité et confidentialité) est activé, le désactiver le temps de l'installation.
+- Play Protect peut afficher « appli non vérifiée » : « Plus de détails » → « Installer quand même ».
+- Mise à jour : installer le nouvel APK par-dessus (même clé de signature) ; les sauvegardes sont conservées.
+- Le jeu se lance en paysage, plein écran. Balayer depuis un bord fait réapparaître les barres Android un instant.
+- Sauvegardes : gardées dans l'appli (sauvegarde automatique, et aussi dès que l'appli passe en arrière-plan).
+  Elles disparaissent seulement si on désinstalle l'appli ou si on vide ses données.
+
+IA de dialogue (Qwen3-0.6B, 397 Mo) : PAS incluse dans l'APK (elle ferait passer l'APK à plus de 700 Mo).
+- Sans elle, le jeu marche entièrement (moteur de dialogue intégré, hors ligne).
+- Pour l'ajouter : Paramètres → IA → « Télécharger l'IA » (une seule fois, en Wi-Fi), ou « Importer » le fichier
+  Qwen3-0.6B-Q4_K_M.gguf déjà copié sur le téléphone. Elle est ensuite gardée dans l'appli, hors ligne.
+- L'analyse des intentions (MiniLM) et le moteur de l'IA (wllama) sont inclus dans l'APK.
+
+2) VERSION HTML
+- Décompresser O-Gayot-v8-html.zip (dossier O-Gayot-v8/).
+- Ouvrir « Ô Gayot v8.html » dans Chrome (ordinateur ou Android) ; le dossier media/ doit rester à côté.
+- Sur Android : Mes fichiers → ouvrir avec Chrome. L'APK reste la façon la plus confortable de jouer sur téléphone.
+
+LIMITES
+- Version HTML ouverte en fichier (file://) : pas d'IA de dialogue ni d'analyse MiniLM (le navigateur les bloque) ;
+  le moteur de dialogue intégré prend le relais. Les sauvegardes y dépendent du navigateur (ne pas vider ses données).
+- IA multithread : l'APK active l'isolation cross-origin (en-têtes COOP/COEP + liste d'origines autorisées de la WebView,
+  androidx.webkit 1.18). Il faut une WebView Android récente (mise à jour via le Play Store). Avec une WebView plus ancienne,
+  l'IA tourne quand même, mais sur un seul cœur (plus lente).
+- APK « debug » : il s'installe hors Play Store, mais n'est pas publiable tel quel sur le Play Store.
+- Taille : environ 300 Mo installés, plus 400 Mo si l'IA est ajoutée.
